@@ -1,13 +1,21 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
+import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
+import { StatsSection } from "@/components/dashboard/StatsSection";
+import { AddProductCard } from "@/components/dashboard/AddProductCard";
+import { AdvertisementsSection } from "@/components/dashboard/AdvertisementsSection";
+import { RecommendedItems } from "@/components/dashboard/RecommendedItems";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <DashboardLayout>
+      <DashboardHeader />
+      <div className="container mx-auto px-4 py-8 animate-fade-in">
+        <StatsSection />
+        <AddProductCard />
+        <AdvertisementsSection />
+        <RecommendedItems />
       </div>
-    </div>
+    </DashboardLayout>
   );
 };
 
