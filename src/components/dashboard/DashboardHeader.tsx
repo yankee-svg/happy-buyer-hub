@@ -25,7 +25,7 @@ export const DashboardHeader = () => {
             </Avatar>
             <div>
               <h1 className="text-xl font-semibold">
-                {user ? `Welcome back, ${buyerName}!` : 'Welcome to BuyerHub!'} 👋
+                {user ? `Welcome back, ${buyerName}!` : 'Welcome to Bazario!'} 👋
               </h1>
               <p className="text-sm text-muted-foreground">
                 {user ? 'Ready to discover something new?' : 'Browse amazing products and deals'}

@@ -74,7 +74,7 @@ const Auth = () => {
               <ShoppingBag className="h-6 w-6 text-primary-foreground" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold">BuyerHub</CardTitle>
+          <CardTitle className="text-2xl font-bold">Bazario</CardTitle>
           <CardDescription>Sign in to your account or create a new one</CardDescription>
         </CardHeader>
         <CardContent>

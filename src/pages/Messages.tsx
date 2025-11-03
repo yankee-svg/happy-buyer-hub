@@ -25,7 +25,7 @@ const Messages = () => {
     {
       id: 3,
       sender: 'Admin',
-      subject: 'Welcome to BuyerHub',
+      subject: 'Welcome to Bazario',
       preview: 'We are excited to have you join our community...',
       time: '3 days ago',
       unread: false,
