@@ -14,7 +14,166 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      Advertisement: {
+        Row: {
+          active: boolean
+          createdAt: string
+          description: string | null
+          id: number
+          imageUrl: string | null
+          link: string | null
+          title: string
+        }
+        Insert: {
+          active?: boolean
+          createdAt?: string
+          description?: string | null
+          id?: number
+          imageUrl?: string | null
+          link?: string | null
+          title: string
+        }
+        Update: {
+          active?: boolean
+          createdAt?: string
+          description?: string | null
+          id?: number
+          imageUrl?: string | null
+          link?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
+      Order: {
+        Row: {
+          createdAt: string
+          id: number
+          status: string
+          total: number
+          userId: string
+        }
+        Insert: {
+          createdAt?: string
+          id?: number
+          status?: string
+          total: number
+          userId: string
+        }
+        Update: {
+          createdAt?: string
+          id?: number
+          status?: string
+          total?: number
+          userId?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "Order_userId_fkey"
+            columns: ["userId"]
+            isOneToOne: false
+            referencedRelation: "User"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      OrderItem: {
+        Row: {
+          id: number
+          orderId: number
+          price: number
+          productId: number
+          quantity: number
+        }
+        Insert: {
+          id?: number
+          orderId: number
+          price: number
+          productId: number
+          quantity?: number
+        }
+        Update: {
+          id?: number
+          orderId?: number
+          price?: number
+          productId?: number
+          quantity?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "OrderItem_orderId_fkey"
+            columns: ["orderId"]
+            isOneToOne: false
+            referencedRelation: "Order"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "OrderItem_productId_fkey"
+            columns: ["productId"]
+            isOneToOne: false
+            referencedRelation: "Product"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      Product: {
+        Row: {
+          createdAt: string
+          description: string | null
+          id: number
+          imageUrl: string | null
+          ownerId: string | null
+          price: number
+          title: string
+        }
+        Insert: {
+          createdAt?: string
+          description?: string | null
+          id?: number
+          imageUrl?: string | null
+          ownerId?: string | null
+          price: number
+          title: string
+        }
+        Update: {
+          createdAt?: string
+          description?: string | null
+          id?: number
+          imageUrl?: string | null
+          ownerId?: string | null
+          price?: number
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "Product_ownerId_fkey"
+            columns: ["ownerId"]
+            isOneToOne: false
+            referencedRelation: "User"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      User: {
+        Row: {
+          createdAt: string
+          email: string
+          id: string
+          name: string | null
+        }
+        Insert: {
+          createdAt?: string
+          email: string
+          id?: string
+          name?: string | null
+        }
+        Update: {
+          createdAt?: string
+          email?: string
+          id?: string
+          name?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
