@@ -6,34 +6,34 @@ import { Badge } from "@/components/ui/badge";
 const items = [
   {
     id: 1,
-    name: "Wireless Headphones Pro",
-    price: "$129.99",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
-    badge: "Trending",
+    name: "General Checkup",
+    price: "$0.00",
+    image: "https://images.unsplash.com/photo-1580281657528-1188b4a3b9a6?w=400&h=400&fit=crop",
+    badge: "Available",
     rating: 4.5,
   },
   {
     id: 2,
-    name: "Smart Watch Series 5",
-    price: "$299.99",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop",
+    name: "Pediatric Consultation",
+    price: "$25.00",
+    image: "https://images.unsplash.com/photo-1580281657528-1188b4a3b9a6?w=400&h=400&fit=crop",
     badge: "Popular",
     rating: 4.8,
   },
   {
     id: 3,
-    name: "Premium Coffee Maker",
-    price: "$89.99",
-    image: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=400&h=400&fit=crop",
+    name: "Blood Test Package",
+    price: "$40.00",
+    image: "https://images.unsplash.com/photo-1580281657528-1188b4a3b9a6?w=400&h=400&fit=crop",
     badge: "New",
     rating: 4.3,
   },
   {
     id: 4,
-    name: "Designer Backpack",
-    price: "$79.99",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop",
-    badge: "Sale",
+    name: "Vaccination",
+    price: "$15.00",
+    image: "https://images.unsplash.com/photo-1580281657528-1188b4a3b9a6?w=400&h=400&fit=crop",
+    badge: "Available",
     rating: 4.6,
   },
 ];
@@ -41,7 +41,7 @@ const items = [
 export const RecommendedItems = () => {
   return (
     <div className="mb-8">
-      <h2 className="text-2xl font-bold mb-4">Recommended For You</h2>
+  <h2 className="text-2xl font-bold mb-4">Recommended Services</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {items.map((item, index) => (
           <Card
@@ -78,7 +78,7 @@ export const RecommendedItems = () => {
                 </div>
                 <Button className="w-full group/btn" size="sm">
                   <ShoppingCart className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
-                  Add to Cart
+                  Book Service
                 </Button>
               </div>
             </CardContent>

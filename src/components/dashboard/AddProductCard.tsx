@@ -8,9 +8,9 @@ export const AddProductCard = () => {
       <CardContent className="p-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex-1 text-center md:text-left">
-            <h3 className="text-2xl font-bold mb-2">List a New Product</h3>
+            <h3 className="text-2xl font-bold mb-2">Register a New Patient</h3>
             <p className="text-muted-foreground">
-              Have something to sell? Add your product to the marketplace and reach thousands of buyers.
+              Register a patient record in Hosweb to manage visits, contact details, and appointments.
             </p>
           </div>
           <Button
@@ -18,7 +18,7 @@ export const AddProductCard = () => {
             className="bg-gradient-to-r from-primary to-primary-hover hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl group"
           >
             <Plus className="mr-2 h-5 w-5 group-hover:rotate-90 transition-transform duration-300" />
-            Add Product
+            Register Patient
           </Button>
         </div>
       </CardContent>

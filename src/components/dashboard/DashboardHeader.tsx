@@ -25,10 +25,10 @@ export const DashboardHeader = () => {
             </Avatar>
             <div>
               <h1 className="text-xl font-semibold">
-                {user ? `Welcome back, ${buyerName}!` : 'Welcome to Bazario!'} 👋
+                {user ? `Welcome back, ${buyerName}!` : 'Welcome to Hosweb!'} 👋
               </h1>
               <p className="text-sm text-muted-foreground">
-                {user ? 'Ready to discover something new?' : 'Browse amazing products and deals'}
+                {user ? 'Ready to manage patients and appointments?' : 'Register patients and manage clinic tasks'}
               </p>
             </div>
           </div>
@@ -44,19 +44,19 @@ export const DashboardHeader = () => {
               <DropdownMenuContent align="end" className="w-80">
                 <DropdownMenuItem className="py-3">
                   <div>
-                    <p className="font-medium">New items in your wishlist category!</p>
+                    <p className="font-medium">New patient registered</p>
                     <p className="text-xs text-muted-foreground">2 hours ago</p>
                   </div>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="py-3">
                   <div>
-                    <p className="font-medium">Your order has been shipped</p>
+                    <p className="font-medium">Appointment scheduled</p>
                     <p className="text-xs text-muted-foreground">5 hours ago</p>
                   </div>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="py-3">
                   <div>
-                    <p className="font-medium">Flash sale starting soon!</p>
+                    <p className="font-medium">Reminder: upcoming appointment</p>
                     <p className="text-xs text-muted-foreground">1 day ago</p>
                   </div>
                 </DropdownMenuItem>

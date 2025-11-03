@@ -37,7 +37,7 @@ const Auth = () => {
     } else {
       toast({
         title: 'Welcome back!',
-        description: 'Successfully signed in.',
+        description: 'Successfully signed in to Hosweb.',
       });
       navigate('/');
     }
@@ -59,7 +59,7 @@ const Auth = () => {
     } else {
       toast({
         title: 'Account Created!',
-        description: 'Please check your email to verify your account.',
+        description: 'Please check your email to verify your Hosweb account.',
       });
     }
     setLoading(false);
@@ -82,8 +82,8 @@ const Auth = () => {
               <ShoppingBag className="h-6 w-6 text-primary-foreground" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold">Bazario</CardTitle>
-          <CardDescription>Sign in to your account or create a new one</CardDescription>
+          <CardTitle className="text-2xl font-bold">Hosweb</CardTitle>
+          <CardDescription>Sign in to Hosweb to manage patient registrations or create a new account</CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="signin" className="w-full">

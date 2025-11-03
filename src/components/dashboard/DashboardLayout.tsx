@@ -38,7 +38,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         <div className="flex flex-col h-full p-4">
           <div className="mb-8 mt-2">
             <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Bazario
+              Hosweb
             </h2>
           </div>
 
@@ -59,7 +59,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           </nav>
 
           <div className="pt-4 border-t border-border">
-            <p className="text-xs text-muted-foreground px-4">© 2025 Bazario</p>
+            <p className="text-xs text-muted-foreground px-4">© 2025 Hosweb</p>
           </div>
         </div>
       </aside>

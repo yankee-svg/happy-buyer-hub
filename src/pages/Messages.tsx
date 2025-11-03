@@ -25,8 +25,8 @@ const Messages = () => {
     {
       id: 3,
       sender: 'Admin',
-      subject: 'Welcome to Bazario',
-      preview: 'We are excited to have you join our community...',
+      subject: 'Welcome to Hosweb',
+      preview: 'We are excited to have you join our clinic dashboard...',
       time: '3 days ago',
       unread: false,
     },

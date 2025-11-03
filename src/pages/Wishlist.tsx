@@ -69,7 +69,7 @@ const Wishlist = () => {
               <CardFooter className="flex gap-2">
                 <Button className="flex-1" disabled={!item.inStock}>
                   <ShoppingCart className="h-4 w-4 mr-2" />
-                  Add to Cart
+                  Book Service
                 </Button>
                 <Button variant="outline" size="icon">
                   <Trash2 className="h-4 w-4" />

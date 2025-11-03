@@ -1,4 +1,4 @@
-// Prisma schema for happy-buyer-hub
+// Prisma schema for hosweb
 // Use DATABASE_URL from .env (connect via pooling). For migrations, use DIRECT_URL.
 
 generator client {
