@@ -67,7 +67,15 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-secondary/5 p-4">
-      <Card className="w-full max-w-md shadow-lg">
+      <div className="w-full max-w-md space-y-4">
+        <Button 
+          variant="ghost" 
+          onClick={() => navigate('/')}
+          className="gap-2"
+        >
+          ← Back to Home
+        </Button>
+        <Card className="w-full shadow-lg">
         <CardHeader className="space-y-1 text-center">
           <div className="flex justify-center mb-4">
             <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
@@ -148,6 +156,7 @@ const Auth = () => {
           By continuing, you agree to our Terms of Service and Privacy Policy
         </CardFooter>
       </Card>
+      </div>
     </div>
   );
 };
