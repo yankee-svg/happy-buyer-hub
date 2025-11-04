@@ -9,7 +9,7 @@ interface DashboardLayoutProps {
 const navItems = [
   { icon: Home, label: "Home", href: "/" },
   { icon: ShoppingBag, label: "My Orders", href: "/orders" },
-  { icon: Heart, label: "Wishlist", href: "/wishlist" },
+  { icon: Heart, label: "Doctors", href: "/doctors" },
   { icon: MessageSquare, label: "Messages", href: "/messages" },
   { icon: Settings, label: "Settings", href: "/settings" },
 ];

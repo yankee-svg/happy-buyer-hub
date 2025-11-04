@@ -7,24 +7,24 @@ import { Button } from "@/components/ui/button";
 const ads = [
   {
     id: 1,
-    title: "Summer Sale - Up to 50% Off!",
-    description: "Limited time offer on electronics and accessories",
-    badge: "HOT DEAL",
-    gradient: "from-orange-500 to-pink-500",
+    title: "Free Health Checkup This Month!",
+    description: "Comprehensive health screening for all new patients",
+    badge: "LIMITED OFFER",
+    gradient: "from-blue-500 to-cyan-500",
   },
   {
     id: 2,
-    title: "New Arrivals - Fashion Collection",
-    description: "Check out the latest trends for this season",
-    badge: "NEW",
-    gradient: "from-purple-500 to-indigo-500",
+    title: "Vaccination Drive - Get Protected",
+    description: "All vaccines available with special discount packages",
+    badge: "IMPORTANT",
+    gradient: "from-green-500 to-emerald-500",
   },
   {
     id: 3,
-    title: "Flash Sale - Today Only!",
-    description: "Grab your favorites before they're gone",
-    badge: "ENDING SOON",
-    gradient: "from-green-500 to-teal-500",
+    title: "24/7 Emergency Care Available",
+    description: "Round-the-clock medical assistance for urgent cases",
+    badge: "ALWAYS OPEN",
+    gradient: "from-red-500 to-orange-500",
   },
 ];
 
@@ -43,7 +43,7 @@ export const AdvertisementsSection = () => {
 
   return (
     <div className="mb-8">
-      <h2 className="text-2xl font-bold mb-4">Featured Deals</h2>
+      <h2 className="text-2xl font-bold mb-4">Health Announcements</h2>
       <div className="relative">
         <Card className="border-none shadow-card overflow-hidden">
           <CardContent className="p-0 relative">
@@ -58,7 +58,7 @@ export const AdvertisementsSection = () => {
                 size="lg"
                 className="bg-white text-gray-900 hover:bg-white/90"
               >
-                Shop Now
+                Learn More
               </Button>
             </div>
 
