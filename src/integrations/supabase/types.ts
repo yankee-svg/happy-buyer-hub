@@ -44,6 +44,50 @@ export type Database = {
         }
         Relationships: []
       }
+      appointments: {
+        Row: {
+          appointment_date: string
+          created_at: string
+          doctor_name: string
+          doctor_specialty: string
+          id: string
+          notes: string | null
+          patient_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          appointment_date: string
+          created_at?: string
+          doctor_name: string
+          doctor_specialty: string
+          id?: string
+          notes?: string | null
+          patient_id: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          appointment_date?: string
+          created_at?: string
+          doctor_name?: string
+          doctor_specialty?: string
+          id?: string
+          notes?: string | null
+          patient_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "appointments_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       Order: {
         Row: {
           createdAt: string
@@ -114,6 +158,57 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      patients: {
+        Row: {
+          address: string | null
+          allergies: string | null
+          blood_type: string | null
+          created_at: string
+          date_of_birth: string
+          emergency_contact: string | null
+          emergency_phone: string | null
+          full_name: string
+          gender: string
+          id: string
+          medical_history: string | null
+          phone: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          address?: string | null
+          allergies?: string | null
+          blood_type?: string | null
+          created_at?: string
+          date_of_birth: string
+          emergency_contact?: string | null
+          emergency_phone?: string | null
+          full_name: string
+          gender: string
+          id?: string
+          medical_history?: string | null
+          phone: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          address?: string | null
+          allergies?: string | null
+          blood_type?: string | null
+          created_at?: string
+          date_of_birth?: string
+          emergency_contact?: string | null
+          emergency_phone?: string | null
+          full_name?: string
+          gender?: string
+          id?: string
+          medical_history?: string | null
+          phone?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
       }
       Product: {
         Row: {
