@@ -78,7 +78,7 @@ export const RecommendedItems = () => {
                 </div>
                 <Button className="w-full group/btn" size="sm">
                   <ShoppingCart className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
-                  Book Service
+                  Book Appointment
                 </Button>
               </div>
             </CardContent>
