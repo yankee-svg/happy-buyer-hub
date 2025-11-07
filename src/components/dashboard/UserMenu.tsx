@@ -37,7 +37,8 @@ export const UserMenu = () => {
     );
   }
 
-  const userInitials = user.email?.charAt(0).toUpperCase() || 'U';
+  const userEmail = user.primaryEmailAddress?.emailAddress || user.emailAddresses?.[0]?.emailAddress || '';
+  const userInitials = userEmail.charAt(0).toUpperCase() || 'U';
 
   return (
     <DropdownMenu>
@@ -54,7 +55,7 @@ export const UserMenu = () => {
         <DropdownMenuLabel>
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">My Profile</p>
-            <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
+            <p className="text-xs leading-none text-muted-foreground">{userEmail}</p>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />

@@ -12,7 +12,8 @@ import { useAuth } from "@/hooks/useAuth";
 
 export const DashboardHeader = () => {
   const { user } = useAuth();
-  const buyerName = user?.email?.split('@')[0] || "Guest";
+  const userEmail = user?.primaryEmailAddress?.emailAddress || user?.emailAddresses?.[0]?.emailAddress || '';
+  const buyerName = userEmail.split('@')[0] || "Guest";
 
   return (
     <header className="sticky top-0 z-30 bg-card/80 backdrop-blur-sm border-b border-border">

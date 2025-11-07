@@ -48,7 +48,7 @@ const Settings = () => {
             <CardContent className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" value={user?.email || ''} disabled />
+                <Input id="email" type="email" value={user?.primaryEmailAddress?.emailAddress || user?.emailAddresses?.[0]?.emailAddress || ''} disabled />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
