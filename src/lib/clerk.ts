@@ -1,2 +1,2 @@
-// Add your Clerk publishable key here
-export const CLERK_PUBLISHABLE_KEY = 'pk_test_YOUR_CLERK_PUBLISHABLE_KEY_HERE';
+// Clerk publishable key from environment variables
+export const CLERK_PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || '';
