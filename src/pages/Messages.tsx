@@ -8,25 +8,25 @@ const Messages = () => {
   const messages = [
     {
       id: 1,
-      sender: 'Support Team',
-      subject: 'Order Confirmation',
-      preview: 'Your order has been confirmed and will be shipped soon...',
+      sender: 'Laboratory',
+      subject: 'Lab results ready',
+      preview: 'Your recent blood test results are available. Click to view the full report.',
       time: '2 hours ago',
       unread: true,
     },
     {
       id: 2,
-      sender: 'Seller',
-      subject: 'Product Inquiry Response',
-      preview: 'Thank you for your question about the product specifications...',
+      sender: 'Clinic Reception',
+      subject: 'Appointment reminder',
+      preview: 'Reminder: Your appointment with Dr. Smith is scheduled for tomorrow at 10:00 AM.',
       time: '1 day ago',
       unread: true,
     },
     {
       id: 3,
-      sender: 'Admin',
-      subject: 'Welcome to Hosweb',
-      preview: 'We are excited to have you join our clinic dashboard...',
+      sender: 'Pharmacy',
+      subject: 'Prescription ready for pickup',
+      preview: 'Your prescription for Atorvastatin is ready at the pharmacy. Bring your ID.',
       time: '3 days ago',
       unread: false,
     },
@@ -38,10 +38,10 @@ const Messages = () => {
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2 flex items-center gap-2">
             <MessageSquare className="h-8 w-8 text-primary" />
-            Messages
+            Health Messages
           </h1>
           <p className="text-muted-foreground">
-            {messages.filter((m) => m.unread).length} unread messages
+            {messages.filter((m) => m.unread).length} unread notifications
           </p>
         </div>
 
