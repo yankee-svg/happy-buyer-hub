@@ -37,7 +37,7 @@ export const UserMenu = () => {
     );
   }
 
-  const userEmail = user.primaryEmailAddress?.emailAddress || user.emailAddresses?.[0]?.emailAddress || '';
+  const userEmail = user?.email || '';
   const userInitials = userEmail.charAt(0).toUpperCase() || 'U';
 
   return (

@@ -12,7 +12,7 @@ import { useAuth } from "@/hooks/useAuth";
 
 export const DashboardHeader = () => {
   const { user } = useAuth();
-  const userEmail = user?.primaryEmailAddress?.emailAddress || user?.emailAddresses?.[0]?.emailAddress || '';
+  const userEmail = user?.email || '';
   const buyerName = userEmail.split('@')[0] || "Guest";
 
   return (
