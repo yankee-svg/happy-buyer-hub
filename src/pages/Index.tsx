@@ -10,9 +10,9 @@ const Index = () => {
     <DashboardLayout>
       <DashboardHeader />
       <div className="container mx-auto px-4 py-8 animate-fade-in">
+        <AdvertisementsSection />
         <StatsSection />
         <AddProductCard />
-        <AdvertisementsSection />
         <RecommendedItems />
       </div>
     </DashboardLayout>

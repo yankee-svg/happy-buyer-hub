@@ -58,7 +58,15 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             })}
           </nav>
 
-          <div className="pt-4 border-t border-border">
+          <div className="pt-4 border-t border-border space-y-3">
+            <div className="px-4 space-y-2">
+              <p className="text-xs font-medium text-foreground/80">Contact Us</p>
+              <div className="text-xs text-muted-foreground space-y-1">
+                <p>📞 +1 (555) 123-4567</p>
+                <p>✉️ support@hosweb.com</p>
+                <p>📍 123 Medical Center Dr.</p>
+              </div>
+            </div>
             <p className="text-xs text-muted-foreground px-4">© 2025 Hosweb</p>
           </div>
         </div>

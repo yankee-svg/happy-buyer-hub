@@ -27,7 +27,7 @@ export const DashboardHeader = () => {
             </Avatar>
             <div>
               <h1 className="text-xl font-semibold">
-                {user ? `Welcome back, ${buyerName}!` : 'Welcome to Hosweb!'} 👋
+                {user ? `Welcome back, ${buyerName}!` : 'Welcome to Hosweb!'}
               </h1>
               <p className="text-sm text-muted-foreground">
                 {user ? 'Ready to manage patients and appointments?' : 'Register patients and manage clinic tasks'}

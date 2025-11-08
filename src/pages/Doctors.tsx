@@ -29,7 +29,7 @@ const Doctors = () => {
       specialty: 'Dermatologist',
       degree: 'MD, FAAD',
       hours: 'Tue-Thu: 10AM-4PM',
-      image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400',
+      image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&crop=face',
       available: false,
     },
   ];

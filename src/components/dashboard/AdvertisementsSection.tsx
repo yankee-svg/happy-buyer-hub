@@ -11,6 +11,7 @@ const ads = [
     description: "Comprehensive health screening for all new patients",
     badge: "LIMITED OFFER",
     gradient: "from-blue-500 to-cyan-500",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=400&fit=crop",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const ads = [
     description: "All vaccines available with special discount packages",
     badge: "IMPORTANT",
     gradient: "from-green-500 to-emerald-500",
+    image: "https://images.unsplash.com/photo-1576671081837-49000212a370?w=800&h=400&fit=crop",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const ads = [
     description: "Round-the-clock medical assistance for urgent cases",
     badge: "ALWAYS OPEN",
     gradient: "from-red-500 to-orange-500",
+    image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=400&fit=crop",
   },
 ];
 
@@ -47,19 +50,27 @@ export const AdvertisementsSection = () => {
       <div className="relative">
         <Card className="border-none shadow-card overflow-hidden">
           <CardContent className="p-0 relative">
-            <div className={`bg-gradient-to-r ${ads[currentAd].gradient} p-8 md:p-12 text-white`}>
-              <Badge className="mb-4 bg-white/20 backdrop-blur-sm text-white border-white/30">
-                {ads[currentAd].badge}
-              </Badge>
-              <h3 className="text-3xl md:text-4xl font-bold mb-2">{ads[currentAd].title}</h3>
-              <p className="text-lg text-white/90 mb-6">{ads[currentAd].description}</p>
-              <Button
-                variant="secondary"
-                size="lg"
-                className="bg-white text-gray-900 hover:bg-white/90"
-              >
-                Learn More
-              </Button>
+            <div className="relative h-64 md:h-80">
+              <img
+                src={ads[currentAd].image}
+                alt={ads[currentAd].title}
+                className="w-full h-full object-cover"
+              />
+              <div className={`absolute inset-0 bg-gradient-to-r ${ads[currentAd].gradient} opacity-60`}></div>
+              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-center text-white">
+                <Badge className="mb-4 bg-white/20 backdrop-blur-sm text-white border-white/30 w-fit">
+                  {ads[currentAd].badge}
+                </Badge>
+                <h3 className="text-3xl md:text-4xl font-bold mb-2">{ads[currentAd].title}</h3>
+                <p className="text-lg text-white/90 mb-6">{ads[currentAd].description}</p>
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  className="bg-white text-gray-900 hover:bg-white/90 w-fit"
+                >
+                  Learn More
+                </Button>
+              </div>
             </div>
 
             {/* Navigation buttons */}

@@ -35,7 +35,7 @@ npm run dev
 
 ## What languages are used for this project?
 
-This project (renamed to Hosweb) is built as a clinic/registration dashboard. It focuses on patient registration flow and lightweight clinic management.
+This project is built as a clinic/registration dashboard. It focuses on patient registration flow and lightweight clinic management.
 
 This project is built with:
 
