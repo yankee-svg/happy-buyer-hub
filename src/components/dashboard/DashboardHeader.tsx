@@ -17,7 +17,7 @@ export const DashboardHeader = () => {
   const buyerName = userEmail.split('@')[0] || "Guest";
 
   return (
-    <header className="sticky top-0 z-30 bg-card/80 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-30 bg-card/95 backdrop-blur-md border-b border-border shadow-card">
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 sm:gap-4 min-w-0 flex-1">

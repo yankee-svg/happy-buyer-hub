@@ -40,24 +40,24 @@ export const StatsSection = () => {
         return (
           <Card
             key={stat.label}
-            className="border-none shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 animate-fade-in"
+            className="border-none shadow-colored hover:shadow-card-hover transition-all duration-300 hover:scale-105 animate-fade-in bg-gradient-to-br from-card to-primary-light/30"
             style={{ animationDelay: `${index * 100}ms` }}
           >
             <CardContent className="p-6">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <p className="text-sm text-muted-foreground mb-1">{stat.label}</p>
-                  <p className="text-3xl font-bold mb-2">{stat.value}</p>
+                  <p className="text-3xl font-bold mb-2 bg-gradient-primary bg-clip-text text-transparent">{stat.value}</p>
                   <p
                     className={`text-sm font-medium ${
-                      stat.positive ? "text-green-600" : "text-red-600"
+                      stat.positive ? "text-success" : "text-destructive"
                     }`}
                   >
                     {stat.change}
                   </p>
                 </div>
-                <div className="p-3 rounded-lg bg-primary/10">
-                  <Icon className="h-6 w-6 text-primary" />
+                <div className="p-3 rounded-lg bg-gradient-primary">
+                  <Icon className="h-6 w-6 text-white" />
                 </div>
               </div>
             </CardContent>
