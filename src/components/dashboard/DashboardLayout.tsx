@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Home, ShoppingBag, Heart, MessageSquare, Settings, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -16,6 +17,7 @@ const navItems = [
 
 export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const location = useLocation();
 
   return (
     <div className="min-h-screen bg-gradient-hero">
@@ -61,16 +63,21 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           <nav className="flex-1 space-y-2">
             {navItems.map((item) => {
               const Icon = item.icon;
+              const isActive = location.pathname === item.href;
               return (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
-                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-foreground/80 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+                  to={item.href}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
+                    isActive 
+                      ? 'bg-primary text-primary-foreground shadow-colored' 
+                      : 'text-foreground/80 hover:bg-primary/10 hover:text-primary'
+                  }`}
                   onClick={() => window.innerWidth < 768 && setSidebarOpen(false)}
                 >
                   <Icon className="h-5 w-5 group-hover:scale-110 transition-transform" />
                   <span className="font-medium">{item.label}</span>
-                </a>
+                </Link>
               );
             })}
           </nav>

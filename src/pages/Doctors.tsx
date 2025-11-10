@@ -74,9 +74,9 @@ const Doctors = () => {
                 </div>
                 <div>
                   {doctor.available ? (
-                    <span className="text-green-600 font-medium">Available</span>
+                    <span className="text-success font-medium">Available</span>
                   ) : (
-                    <span className="text-red-600 font-medium">Unavailable</span>
+                    <span className="text-destructive font-medium">Unavailable</span>
                   )}
                 </div>
               </CardContent>
