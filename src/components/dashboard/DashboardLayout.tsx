@@ -23,23 +23,39 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       <Button
         variant="ghost"
         size="icon"
-        className="fixed top-4 left-4 z-50 md:hidden"
+        className="fixed top-4 left-4 z-50 md:hidden bg-card/80 backdrop-blur-sm"
         onClick={() => setSidebarOpen(!sidebarOpen)}
       >
         {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>
 
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-30 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-0 z-40 h-screen bg-card border-r border-border transition-transform duration-300 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } ${sidebarOpen ? "w-64" : "w-0"} md:translate-x-0 md:w-64`}
+        className={`fixed left-0 top-0 z-40 h-screen bg-card border-r border-border transition-transform duration-300 w-64 ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        }`}
       >
-        <div className="flex flex-col h-full p-4">
-          <div className="mb-8 mt-2">
+        <div className="flex flex-col h-full p-4 overflow-y-auto">
+          <div className="mb-8 mt-2 flex items-center justify-between">
             <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Hosweb
             </h2>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setSidebarOpen(false)}
+            >
+              <X className="h-5 w-5" />
+            </Button>
           </div>
 
           <nav className="flex-1 space-y-2">
@@ -50,6 +66,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                   key={item.label}
                   href={item.href}
                   className="flex items-center gap-3 px-4 py-3 rounded-lg text-foreground/80 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+                  onClick={() => window.innerWidth < 768 && setSidebarOpen(false)}
                 >
                   <Icon className="h-5 w-5 group-hover:scale-110 transition-transform" />
                   <span className="font-medium">{item.label}</span>
@@ -73,11 +90,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       </aside>
 
       {/* Main content */}
-      <main
-        className={`transition-all duration-300 ${
-          sidebarOpen ? "md:ml-64" : "md:ml-0"
-        }`}
-      >
+      <main className="md:ml-64">
         {children}
       </main>
     </div>

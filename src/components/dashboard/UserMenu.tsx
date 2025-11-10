@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { User, Settings, LogOut, LogIn } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -39,12 +39,14 @@ export const UserMenu = () => {
 
   const userEmail = user?.email || '';
   const userInitials = userEmail.charAt(0).toUpperCase() || 'U';
+  const userName = userEmail.split('@')[0] || 'User';
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+        <Button variant="ghost" className="relative h-9 w-9 sm:h-10 sm:w-10 rounded-full">
           <Avatar>
+            <AvatarImage src={`https://api.dicebear.com/7.x/notionists/svg?seed=${userName}`} />
             <AvatarFallback className="bg-primary/10 text-primary font-semibold">
               {userInitials}
             </AvatarFallback>
