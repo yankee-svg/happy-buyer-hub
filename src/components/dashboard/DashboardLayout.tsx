@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home, ShoppingBag, Heart, MessageSquare, Settings, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -47,9 +48,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       >
         <div className="flex flex-col h-full p-4 overflow-y-auto">
           <div className="mb-8 mt-2 flex items-center justify-between">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Hosweb
-            </h2>
+            <Logo />
             <Button
               variant="ghost"
               size="icon"

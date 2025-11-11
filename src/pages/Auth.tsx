@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ShoppingBag } from 'lucide-react';
+import { Logo } from '@/components/ui/logo';
 import { useToast } from '@/hooks/use-toast';
 
 const Auth = () => {
@@ -141,8 +142,12 @@ const Auth = () => {
                 <ShoppingBag className="h-6 w-6 text-primary-foreground" />
               </div>
             </div>
-            <CardTitle className="text-2xl font-bold">Hosweb</CardTitle>
-            <CardDescription>Sign in to Hosweb to manage patient registrations</CardDescription>
+            <CardTitle className="text-2xl font-bold">
+              <div className="flex items-center justify-center">
+                <Logo />
+              </div>
+            </CardTitle>
+            <CardDescription>Sign in to HosWeb to manage patient registrations</CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="signin" className="w-full">
