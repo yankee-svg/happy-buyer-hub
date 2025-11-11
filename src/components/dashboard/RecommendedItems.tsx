@@ -2,12 +2,13 @@ import { Heart, ShoppingCart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 const items = [
   {
     id: 1,
     name: "General Checkup",
-    price: "$0.00",
+    price: "5,000 Rwf",
     image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=400&h=400&fit=crop",
     badge: "Available",
     rating: 4.5,
@@ -15,7 +16,7 @@ const items = [
   {
     id: 2,
     name: "Pediatric Consultation",
-    price: "$25.00",
+    price: "15,000 Rwf",
     image: "https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=400&h=400&fit=crop",
     badge: "Popular",
     rating: 4.8,
@@ -23,7 +24,7 @@ const items = [
   {
     id: 3,
     name: "Blood Test Package",
-    price: "$40.00",
+    price: "25,000 Rwf",
     image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=400&h=400&fit=crop",
     badge: "New",
     rating: 4.3,
@@ -31,7 +32,7 @@ const items = [
   {
     id: 4,
     name: "Vaccination",
-    price: "$15.00",
+    price: "10,000 Rwf",
     image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop",
     badge: "Available",
     rating: 4.6,
@@ -39,9 +40,15 @@ const items = [
 ];
 
 export const RecommendedItems = () => {
+  const navigate = useNavigate();
+
+  const handleBookAppointment = (item: typeof items[0]) => {
+    navigate('/orders', { state: { selectedService: item } });
+  };
+
   return (
     <div className="mb-8">
-  <h2 className="text-2xl font-bold mb-4">Recommended Services</h2>
+      <h2 className="text-2xl font-bold mb-4">Recommended Services</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {items.map((item, index) => (
           <Card
@@ -76,7 +83,11 @@ export const RecommendedItems = () => {
                     <span className="text-sm text-muted-foreground">{item.rating}</span>
                   </div>
                 </div>
-                <Button className="w-full group/btn" size="sm">
+                <Button 
+                  className="w-full group/btn" 
+                  size="sm"
+                  onClick={() => handleBookAppointment(item)}
+                >
                   <ShoppingCart className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
                   Book Appointment
                 </Button>

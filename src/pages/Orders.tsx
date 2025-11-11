@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { DashboardLayout } from '@/components/dashboard/DashboardLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -20,6 +21,8 @@ const Orders = () => {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
+  const location = useLocation();
+  const selectedService = location.state?.selectedService;
 
   useEffect(() => {
     fetchAppointments();
@@ -108,9 +111,37 @@ const Orders = () => {
     <DashboardLayout>
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">My Appointments</h1>
-          <p className="text-muted-foreground">View and manage your medical appointments</p>
+          <h1 className="text-3xl font-bold mb-2">
+            {selectedService ? 'Book Appointment' : 'My Appointments'}
+          </h1>
+          <p className="text-muted-foreground">
+            {selectedService 
+              ? 'Complete the form below to book your appointment' 
+              : 'View and manage your medical appointments'}
+          </p>
         </div>
+
+        {selectedService && (
+          <Card className="mb-6 border-primary/20 bg-primary/5">
+            <CardHeader>
+              <CardTitle>Selected Service</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center gap-4">
+                <img 
+                  src={selectedService.image} 
+                  alt={selectedService.name}
+                  className="w-20 h-20 rounded-lg object-cover"
+                />
+                <div>
+                  <h3 className="font-semibold text-lg">{selectedService.name}</h3>
+                  <p className="text-primary font-bold">{selectedService.price}</p>
+                  <Badge className="mt-1">{selectedService.badge}</Badge>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         {loading ? (
           <div className="text-center py-12">
