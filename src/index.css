@@ -18,10 +18,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 199 89% 48%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 199 89% 38%;
-    --primary-light: 199 89% 95%;
+  /* Use a darker blue for the primary highlight (was a lighter blue) */
+  --primary: 210 90% 36%;
+  --primary-foreground: 0 0% 100%;
+  --primary-hover: 210 90% 30%;
+  --primary-light: 210 90% 92%;
 
     --secondary: 25 95% 53%;
     --secondary-foreground: 0 0% 100%;
@@ -95,10 +96,10 @@ All colors MUST be HSL.
     --popover: 222 40% 15%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 199 89% 58%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 199 89% 68%;
-    --primary-light: 199 89% 20%;
+  --primary: 199 89% 58%;
+  --primary-foreground: 0 0% 100%;
+  --primary-hover: 199 89% 68%;
+  --primary-light: 199 89% 20%;
 
     --secondary: 25 95% 58%;
     --secondary-foreground: 0 0% 100%;

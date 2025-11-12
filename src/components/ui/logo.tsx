@@ -2,14 +2,15 @@ import React from 'react';
 
 interface LogoProps {
   className?: string;
+  compact?: boolean;
 }
 
-export const Logo: React.FC<LogoProps> = ({ className = '' }) => {
+export const Logo: React.FC<LogoProps> = ({ className = '', compact = false }) => {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <svg
-        width="36"
-        height="28"
+        width={compact ? 28 : 36}
+        height={compact ? 20 : 28}
         viewBox="0 0 36 28"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +30,9 @@ export const Logo: React.FC<LogoProps> = ({ className = '' }) => {
         />
       </svg>
 
-      <span className="text-2xl font-semibold text-slate-800 tracking-tight">HosWeb</span>
+      {!compact && (
+        <span className="text-2xl font-semibold text-slate-800 tracking-tight">HosWeb</span>
+      )}
     </div>
   );
 };
