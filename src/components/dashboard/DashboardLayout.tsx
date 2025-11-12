@@ -16,13 +16,12 @@ const navItems = [
 ];
 
 export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  // desktopVisible controls whether the sidebar is visible on desktop; toggling it will slide the sidebar on/off
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [desktopVisible, setDesktopVisible] = useState(true);
   const location = useLocation();
 
   return (
-  <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-gradient-hero">
       {/* Mobile menu button */}
       <Button
         variant="ghost"
@@ -33,34 +32,46 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>
 
+      {/* Desktop toggle button - outside sidebar, only shows when sidebar is hidden */}
+      {!desktopVisible && (
+        <Button
+          variant="ghost"
+          size="icon"
+          className="hidden md:flex fixed top-4 left-4 z-50 bg-card/80 backdrop-blur-sm"
+          onClick={() => setDesktopVisible(true)}
+        >
+          <Menu className="h-5 w-5" />
+        </Button>
+      )}
+
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div 
-          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-30 md:hidden"
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 md:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-0 z-40 h-screen bg-card border-r border-border transition-transform duration-300 w-64 ${
+        className={`fixed left-0 top-0 z-50 h-screen bg-card border-r border-border transition-transform duration-300 w-64 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } ${desktopVisible ? 'md:translate-x-0' : 'md:-translate-x-full'}`}
+        } md:z-40 ${desktopVisible ? 'md:translate-x-0' : 'md:-translate-x-full'}`}
       >
         <div className="flex flex-col h-full p-4 overflow-y-auto">
           <div className="mb-8 mt-2 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setDesktopVisible(!desktopVisible)}
-                aria-label={desktopVisible ? 'Hide sidebar' : 'Show sidebar'}
-              >
-                <Menu className="h-5 w-5" />
-              </Button>
+              <h2 className="text-xl font-bold text-primary">Hosweb</h2>
             </div>
-            {/* Logo removed per request - keep a small spacer for alignment when needed */}
-            <div className="w-3" />
+            {/* Desktop close button inside sidebar */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden md:flex"
+              onClick={() => setDesktopVisible(false)}
+            >
+              <X className="h-5 w-5" />
+            </Button>
           </div>
 
           <nav className="flex-1 space-y-2">
@@ -79,13 +90,13 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                   onClick={() => window.innerWidth < 768 && setSidebarOpen(false)}
                 >
                   <Icon className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                  <span className={`font-medium`}>{item.label}</span>
+                  <span className="font-medium">{item.label}</span>
                 </Link>
               );
             })}
           </nav>
 
-          <div className={`pt-4 border-t border-border space-y-3`}>
+          <div className="pt-4 border-t border-border space-y-3">
             <div className="px-4 space-y-2">
               <p className="text-xs font-medium text-foreground/80">Contact Us</p>
               <div className="text-xs text-muted-foreground space-y-1">
@@ -100,7 +111,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       </aside>
 
       {/* Main content */}
-      <main className={`${desktopVisible ? 'md:ml-64' : 'md:ml-0'}`}>
+      <main className={`transition-all duration-300 ${desktopVisible ? 'md:ml-64' : 'md:ml-0'}`}>
         {children}
       </main>
     </div>
